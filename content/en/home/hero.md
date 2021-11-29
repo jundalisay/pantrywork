@@ -26,4 +26,4 @@ hero_media = "/img/pantryscreen.png"
 
 # We build the Pantry Points System
 
-Pantry Works is a small dedicated team that builds the Pantry system for Pantrynomics 
+Pantry Work is a small dedicated team that builds the Pantry system for Pantrynomics 

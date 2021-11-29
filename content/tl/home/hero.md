@@ -4,7 +4,7 @@ weight = 10
 
 # hidden = true
 
-hero_media = "/img/pantryscreen.jpg"
+hero_media = "/img/pantryscreen.png"
 
 [[btn]]
 	# The url of the button
@@ -21,4 +21,4 @@ hero_media = "/img/pantryscreen.jpg"
 
 # Kami ang gumagawa ng Pantry Points System
 
-Ang Pantry Works ay isang maliit na team na gumagawa sa Pantry system ng Pantrynomics 
+Ang Pantry Work ay isang maliit na team na gumagawa sa Pantry system ng Pantrynomics 

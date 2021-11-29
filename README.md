@@ -10,6 +10,17 @@ https://github.com/soratrade/picotheme.git
 6
 7
 
+		<a href="{{ .Site.Home.Permalink }}" class="inline-block font-bold no-underline select-none">
+			<h1 class="hidden md:block font-charter tracking-normal m-0">
+				{{ .Site.Title }}
+			</h1>
+
+			<div class="md:hidden">
+				{{ partial "icon" . }}
+			</div>
+		</a>
+
+		
 anahata = sentient 
 manipura = mutative
 
