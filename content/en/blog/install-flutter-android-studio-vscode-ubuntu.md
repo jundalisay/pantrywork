@@ -1,7 +1,7 @@
 +++
 title = "How to install Flutter, Android Studio, and Visual Studio Code in Ubuntu"
 subtitle = ""
-banner = "https://sorasystem.sirv.com/photos/pawns.jpg"
+banner = "/img/tech.jpg"
 description = "How to install Flutter, Android Studio, and Visual Studio Code in Ubuntu"
 tags = ['Flutter', 'Android', 'VS Code']
 date = 2019-01-01

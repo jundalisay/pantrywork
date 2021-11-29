@@ -19,13 +19,13 @@ The internet has allowed software to be accessed remotely leading to different k
 Pantrynomics adds to this innovation by creating Economy-as-a-Service. This has all the features of a resource allocation system:
 
 - valuation of resources
-  - this will be done through [Basic Universal Revenue or BUR](https://superphysics.one/articles/taonomics/what-is-basic-universal-revenue) and [the Modern Economic Table](https://superphysics.one/articles/taonomics/the-modern-economic-table) 
+  - this will be done through [Basic Universal Revenue or BUR](https://superphysics.one/articles/pantrynomics/what-is-basic-universal-revenue) and [the Modern Economic Table](https://superphysics.one/articles/pantrynomics/the-modern-economic-table) 
 - storage of the valuation
-  - this will be done through [resource banking](https://superphysics.one/articles/taonomics/what-are-resource-credits) 
+  - this will be done through [resource banking](https://superphysics.one/articles/pantrynomics/what-are-resource-credits) 
 - exchange of the resources
-  - this will be done through a tri-media system of exchange of fiat, [barter contracts](https://superphysics.one/articles/taonomics/why-business-is-immoral), and BUR points
+  - this will be done through a tri-media system of exchange of fiat, [barter contracts](https://superphysics.one/articles/pantrynomics/why-business-is-immoral), and BUR points
 - taxation to maintain the system
-  - this will be done through [Fairtax](https://superphysics.one/articles/taonomics/what-is-fairtax-of-adam-smith)
+  - this will be done through [Fairtax](https://superphysics.one/articles/pantrynomics/what-is-fairtax-of-adam-smith)
 - real-time analytics to nowcast the economy
   - this will be done through [Pantrylitics](https://pantrypoints.com/pantrylitics)
 - communication between users

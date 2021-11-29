@@ -8,11 +8,13 @@ description = "Here are Useful Free Tools for Web Development for 2021"
 
 Here are some free online tools that we use to develop our own app and websites. I've put up this list for my own use in case I have to scrub data using a different computer, like the ones in internet cafes
 
+<br>
 
 Machine Learning Tool | Purpose
 --- | ---
 [Google Colab](https://colab.research.google.com/) | Free online machine learning environment
 
+<br>
 
 Graphics Resources | Purpose
 --- | ---
@@ -24,12 +26,14 @@ Graphics Resources | Purpose
 [Undraw](https://undraw.com/) | Free Images
 [Unsplash](https://unsplash.com/) | Free Graphics / Illustrations / Photos
 
+<br>
 
 Video Resources | Purpose
 --- | ---
 [Openshot](https://www.openshot.org) | Free video editor
 [Pexels](https://www.pexels.com/videos/) | Free Images and Stock Videos
 
+<br>
 
 Hosting Resources | Purpose
 --- | ---
@@ -40,6 +44,7 @@ Hosting Resources | Purpose
 [Heroku](https://heroku.com/) | Deploy web servers (needs credit card)
 [Google Cloud Platform](https://console.cloud.google.com/) | Deploy web servers (needs credit card), has free trial
 
+<br>
 
 Web Tools | Purpose
 --- | ---
@@ -47,11 +52,13 @@ Web Tools | Purpose
 [SSL Test](https://www.ssllabs.com/ssltest/index) | Check your SSL
 [Open Ports](https://www.yougetsignal.com/tools/open-ports) | check which ports are open
 
+<br>
 
 Map Tools | Purpose
 --- | ---
 [Lat Long Finder](https://www.latlong.net/) | Latitude and Longitude Finder based on Address data (Faster than Google Maps)
 
+<br>
 
 Text Tools | Purpose 
 --- | --- 
@@ -60,6 +67,7 @@ Text Tools | Purpose
 [Remove Letter Accents](http://www.unit-conversion.info/texttools/remove-letter-accents/) | Useful for non-english text
 [ERB to Slim](https://erb2slim.com/) | HTML to slim converter for Ruby templates
 
+<br>
 
  Site Performance Tools | Purpose 
 ---: | :---: 
@@ -69,14 +77,17 @@ Text Tools | Purpose
  [Page Insights](https://developers.google.com/speed/pagespeed/insights/) | Check site performance 
 <!-- http://loadimpact.com -->
 
+<br>
 
 SEO Tools | Purpose |
 --- | --- |
 [Ahrefs](https://ahrefs.com/free-seo-tools) | Check broken links, domain authority, keywords, etc |
+[Broken Link Checker](https://www.brokenlinkcheck.com/)
 [Ubersuggest](https://neilpatel.com/ubersuggest/) | Find keywords for your content |
 [Moz](https://moz.com/domain-analysis) | Check basic SEO |
-[Semrush](https://www.semrush.com/) | Check basic SEO |
+[Semrush](https://www.semrush.com/) | Site Audit |
 
+<br>
 
 Social Tools | Purpose
 --- | ---

@@ -7,7 +7,7 @@ date = 2016-11-12
 # linkbtext: "hanoi-techest"
 # linkf: "news/startup-weekend-cambodia"
 # linkftext: "startup-weekend"
-draft= true
+draft = true
 +++
 
 

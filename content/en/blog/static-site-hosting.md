@@ -19,9 +19,13 @@ The problem is that we had a lot of content waiting to be written for [Superphys
 
 ## Solution: Static Site Hosting
 
-I first heard of static site hosting when Github came out with Github Pages. At that time, we had very little content, so we put it on [wordpress.com](http://socioecons.wordpress.com) as drafts. Over the years, we refined the content and gradually put it as styled pages in our web app. 
+I first heard of static site hosting when Github came out with Github Pages. Back then, static site generators were limited and all you had was HTML and Javascript. From 2015, Netlify popularized the concept of Jamstack, which added API -- Javascript + API + Markup. This is commonly seen in chat widgets, comment forms, and 'like' buttons on a webpage.  
 
-The need to keep costs low, while improving SEO and managing content, led us to separate the content to static site generators. We ended up with Hugo as the easiest and fastest. We tried deploying our Hugo sites on four platforms that didn't require credit cards:
+Back in 2015, we had very little content, so we put it on [wordpress.com](http://socioecons.wordpress.com) as drafts. Over the years, we refined the content and gradually put it as styled pages in our web app which acted like an internal mini-CMS.
+
+The need to keep costs low, while improving SEO and managing content, led us to separate the content to static site generators. We forked our mini-CMS as a [blogging feature](https://lp.pantrypoints.com/articles) in Pantry. 
+
+We chose Hugo as the easiest and fastest static site generator. We then deployed our Hugo sites on different hosts that didn't require credit cards to see the performance and maintainability:
 
 Host | Pros | Cons 
 --- | --- | ---
@@ -37,7 +41,7 @@ Render | Nice UI  | lets you set up paid services and incur charges
 
 [Github Pages](https://github.com) is great even with slow internet connection -- just take the public files and push.
 
-[Cloudflare Pages](https://pages.cloudflare.com/) deploys automatically and is the easiest to configure DNS. The site loads a bit faster thanks to Cloudflare's CDN
+[Cloudflare Pages](https://pages.cloudflare.com/) deploys automatically and makes it easy to configure DNS. The site loads a bit faster thanks to Cloudflare's CDN
 
 [Netlify](https://netlify.com) automates the deploy just like Cloudflare Pages, which is great for adding content. But this is a problem if you want to change or edit the theme.
 
@@ -48,6 +52,8 @@ Render | Nice UI  | lets you set up paid services and incur charges
 ## Clouflare is Great
 
 We decided to use Cloudflare because it's fast and is easy to deploy. Unlike the others, it does not have bandwidth limits. Instead, it limits the deploys to 500 per month. 
+
+For people without coding skills, there are services like [forestry.io](https://forestry.io) that allow users to add and edit content just like any CMS.
 
 <!--  
 For now, the plan* is to start with Github Pages and then move on to Firebase when the site visitors increase. Firebase has [a calculator](https://firebase.google.com/pricing#blaze-calculator) to estimate the cost based on GB used.  -->
