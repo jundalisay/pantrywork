@@ -4,4 +4,4 @@ title = "Contact"
 
 +++
 
-Send us a message!
+May mensahe ka ba?

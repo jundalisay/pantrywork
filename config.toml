@@ -79,8 +79,8 @@ url = "https://facebook.com/pantrywork"
 [[menu.main]]
 identifier = "home" # identifier is use for translations
 pre = "" # pre is inserted before the translation (icons, image, etc)
-url = "/" 
-weight = 10 
+url = "/"
+weight = 10
 
 [[menu.main]]
 identifier = "blog" # identifier is use for translations

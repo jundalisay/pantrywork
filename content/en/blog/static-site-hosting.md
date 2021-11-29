@@ -1,8 +1,8 @@
 +++
-title = "Firebase vs Github vs Netlify vs Render"
+title = "Firebase vs Github vs Netlify vs Render vs Clouflare"
 subtitle = "Which is best for Free Static Site Hosting?"
 banner = "/img/firebasenetlify.jpg"
-description = "We like Firebase the best"
+description = "We tried different static site hosts and liked Cloudflare the best. See the pros and cons of each."
 tags = ['Static Site Hosting']
 date = 2021-11-15
 +++
@@ -26,6 +26,7 @@ The need to keep costs low, while improving SEO and managing content, led us to 
 Host | Pros | Cons 
 --- | --- | ---
 Github Pages | easy to deploy | content must be public
+Cloudflare Pages | easy to deploy, integrates with Cloudflare | content must be public
 Firebase | easiest to deploy, content isn't public, creates Google Analytics | needs to install Firebase console
 Netlify | Nice UI | automated deploy makes git submodules complicated, content must be public
 Render | Nice UI  | lets you set up paid services and incur charges 
@@ -36,10 +37,17 @@ Render | Nice UI  | lets you set up paid services and incur charges
 
 [Github Pages](https://github.com) is great even with slow internet connection -- just take the public files and push.
 
-[Netlify](https://netlify.com) automates the deploy, which is great for adding content. But this is a problem if you want to change or edit the theme. 
+[Cloudflare Pages](https://pages.cloudflare.com/) deploys automatically and is the easiest to configure DNS. The site loads a bit faster thanks to Cloudflare's CDN
+
+[Netlify](https://netlify.com) automates the deploy just like Cloudflare Pages, which is great for adding content. But this is a problem if you want to change or edit the theme.
 
 [Render](https://render.com) is easier to deploy than Netlify with Hugo themes, but be careful about creating services as they let the meter run even after the trial period! I actually made this mistake when I thought that a certain Javascript framework was categorized as a static site generator (it wasn't) and so I let it run, thinking it would be free. (Thanks to John of Render for waiving the fee.) 
 
-For now, the plan* is to start with Github Pages and then move on to Firebase when the site visitors increase. Firebase has [a calculator](https://firebase.google.com/pricing#blaze-calculator) to estimate the cost based on GB used. 
+<br>
 
-> *We also tried Cloudflare Pages but couldn't get it to work
+## Clouflare is Great
+
+We decided to use Cloudflare because it's fast and is easy to deploy. Unlike the others, it does not have bandwidth limits. Instead, it limits the deploys to 500 per month. 
+
+<!--  
+For now, the plan* is to start with Github Pages and then move on to Firebase when the site visitors increase. Firebase has [a calculator](https://firebase.google.com/pricing#blaze-calculator) to estimate the cost based on GB used.  -->

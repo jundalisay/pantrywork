@@ -2,6 +2,58 @@
 
 https://github.com/soratrade/picotheme.git
 
+1
+2
+3
+4
+5
+6
+7
+
+anahata = sentient 
+manipura = mutative
+
+yaksa - spiritual but money minded 
+kinnara  - beauty 
+gandharva - music
+vidyadhara - intellect 
+parkrtilina - materialistm
+videhaliina  - liberailism 
+siddha - occult powers 
+
+ghandaruminii 
+
+
+durmukha 
+kabandha  - suicide 
+madhyakapala - intellectual restlessness 
+mahakapala - sadists
+brahma pishaca - imperialists 
+akashiipreta - ambirious criminals 
+pishaca - pleasure 
+gandhapishaca - ghosts 
+
+gandhaksa - viruses
+krimii - bacteria 
+
+laryngitis - 
+
+bhu 
+bhuvah
+svah
+maha
+jana
+tapah
+satya
+
+bhu 
+tala
+atala 
+talatala
+patala
+atipatala
+rasatala
+
 
 <section id="contact">
 	<h1 class="text-center mx-auto max-w-4xl text-4xl sm:text-5xl md:text-6xl">

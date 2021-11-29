@@ -6,8 +6,8 @@ weight = 20  # Order that this section will appear.
 # Uncomment the following line and widget will NOT be displayed
 # hidden = true
 
-title = "Expertise"
-subtitle = "The technology that we work with"
+title = "Ang Aming Kakayahan"
+subtitle = "Ang mga teknolohiya na gamit namin"
 
 [[bar]]
 	# icon = "/icons/precision.svg"
@@ -16,12 +16,12 @@ subtitle = "The technology that we work with"
 
 [[bar]]
 	# icon = "/icons/chicken.svg"
-	name = "Content and SEO"
+	name = "Content at SEO"
 	percent = "85%"
 
 [[bar]]
 	# icon = "/icons/heat.svg"
-	name = "Mobile: Flutter (Android and iOS)"
+	name = "Mobile: Flutter (Android at iOS)"
 	percent = "60%"
 
 [[bar]]

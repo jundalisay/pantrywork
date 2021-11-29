@@ -8,50 +8,48 @@ weight = 30  # Order that this section will appear.
 # Widget title
 title = "Timeline"
 # Widget subtitle
-subtitle = "The Evolution of Pantry"
+subtitle = "Ang Ebolusyon ng Pantry"
 
 date_format = "02.01.2006" # Date format https://gohugo.io/functions/dateformat/#readout
 
 [[period]]
-  title = "The Pantry mobile app with Flutter"
-  subtitle = "We start with Flutter after it goes to 1.0"
+  title = "Ang Pantry web base sa Phoenix"
+  subtitle = "Nagpalit kami sa Phoenix para mapababa ang server costs"
+  # location = "France"
+  date_start = "2020-01-01"
+  date_end = ""
+  description = "Paalam Rails at Flask!"
+
+[[period]]
+  title = "Ang Pantry mobile app sa Flutter"
+  subtitle = "Nagsimula kami sa Flutter nung ito'y maging 1.0"
   # location = "France"
   date_start = "2016-01-01"
   date_end = "2018-12-31"
-  description = "We drop React and React Native"
+  description = "Paalam React at React Native!"
 
 [[period]]
-  title = "The Pantry mobile app with Flutter"
-  subtitle = "We start with Flutter after it goes to 1.0"
+  title = "Ang Pantry bilang Rails app"
+  subtitle = "Nag-upgrade kami sa Rails para magawa ang mga features nang mabilis"
   # location = "France"
   date_start = "2016-01-01"
   date_end = "2018-12-31"
-  description = "We drop React and React Native"
+  description = "Tinulungan kami ng [Coderschool VN](https://coderschool.vn) para matuto ng Rails"
 
 [[period]]
-  title = "The third version as a Rails app"
-  subtitle = "We upgraded to Rails"
-  # location = "France"
-  date_start = "2016-01-01"
-  date_end = "2018-12-31"
-  description = "Coderschool VN helps us get up and running with Rails"
-
-[[period]]
-  title = "The second version as a Sinatra app"
-  subtitle = "We switch to Ruby"
+  title = "Ang pangalawang version bilang Sinatra app"
+  subtitle = "Lumipat kami sa Ruby at Heroku"
   # location = "France"
   date_start = "2015-01-01"
   date_end = "2015-12-31"
-  description = "Sinatra was simple, but limited"
-
+  description = "Simple lang ang Sinatra pero limitado"
 
 [[period]]
   title = "Python Flask backend"
-  subtitle = "The first version of Pantry as a web app"
+  subtitle = "Ang unang bersyon ng Pantry ay gamit ang Python Flask na bago lang"
   # location = "Bikini Bottom"
   date_start = "2012-01-01"
   date_end = ""
-  description = "Deployed on Google App Engine"
-
+  description = "Deployed sa Google App Engine"
 
 +++
