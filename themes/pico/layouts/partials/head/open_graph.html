@@ -7,6 +7,8 @@
 <meta property="og:url" content="http://www.example.com/" /> -->
 {{ with .Params.banner }}
   <meta property="og:image" content="{{ . | absURL }}" /> 
+{{ else }}
+  <meta property="og:image" content="{{ "/img/pantryworks.jpg" | absURL }}" /> 
 {{ end }}
 
 {{ with .Description }}
