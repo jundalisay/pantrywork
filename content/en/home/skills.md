@@ -31,7 +31,7 @@ subtitle = "The technology that we work with"
 
 [[bar]]
 	# icon = "/icons/presentation.svg"
-	name = "Machine Learning: Scikit Learn, pcoSagemaker"
+	name = "Machine Learning: Scikit Learn, Sagemaker"
 	percent = "30%"	
 
 +++

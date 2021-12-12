@@ -48,7 +48,7 @@ date_format = "02.01.2006" # Date format https://gohugo.io/functions/dateformat/
 [[period]]
   title = "Python Flask backend"
   subtitle = "The first version of Pantry as a web app"
-  # location = "Bikini Bottom"
+  # location = ""
   date_start = "2012-01-01"
   date_end = ""
   description = "Deployed on Google App Engine"

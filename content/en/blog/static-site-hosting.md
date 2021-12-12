@@ -23,7 +23,7 @@ I first heard of static site hosting when Github came out with Github Pages. Bac
 
 Back in 2015, we had very little content, so we put it on [wordpress.com](http://socioecons.wordpress.com) as drafts. Over the years, we refined the content and gradually put it as styled pages in our web app which acted like an internal mini-CMS.
 
-The need to keep costs low, while improving SEO and managing content, led us to separate the content to static site generators. We forked our mini-CMS as a [blogging feature](https://lp.pantrypoints.com/articles) in Pantry. 
+The need to keep costs low, while improving SEO and managing content, led us to separate the content to static site generators. We forked our mini-CMS as a [blogging feature](https://pantrypoints.com/beacon) in Pantry. 
 
 We chose Hugo as the easiest and fastest static site generator. We then deployed our Hugo sites on different hosts that didn't require credit cards to see the performance and maintainability:
 
