@@ -7,13 +7,13 @@ tags = ['Phoenix', 'Gigalixir', 'Heroku']
 date = 2021-12-11
 +++
 
-We switched from Python Flask and Ruby on Rails to Phoenix when we started getting users in our web app. 
+We intially developed the Pantry web app using Python Flask and then Ruby on Rails many years ago. 
 
-This strained our server which either had to burst (leading to more charges) or restart. 
+After we started getting users in our web app, we realized how terrible Flask and Rails were for performance. The users strained our server which we either had to burst (leading to more charges) or restart (which led to a loss of users). 
 
-The dilemma was to go with Golang or Phoenix. Since Phoenix is heavily influenced by Rails, we naturally decided to go for Phoenix. 
+Flask and Rails clearly had to go. But the dilemma was what to replace them with. Should we go with Golang which was low level? Or should we switch to Phoenix which ran on an efficient virtual machine? 
 
-Unlike Flask or Rails that needs a server with minimum 1GB RAM or more, Phoenix can run a full web app with 300 MB! This is in addition to its speed, and its nice LiveView feature, which turns Phoenix into a websocket server.  
+Since Phoenix is heavily influenced by Rails, we naturally decided to go for Phoenix.  Unlike Flask or Rails that needs a server with minimum 1GB RAM or more, Phoenix can run a full web app with 300 MB! This is in addition to its speed, and its nice LiveView feature, which turns Phoenix into a websocket server.
 
 The easiest way to deploy Phoenix is through Gigalixir or Heroku, so here are the steps for Phoenix 1.6.2, taken from the official guide.  This assumes you already have the Gigalixir and Heroku CLIs and web accounts. Let's say the app name is `socrates`.
 
