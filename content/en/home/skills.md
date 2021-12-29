@@ -11,7 +11,7 @@ subtitle = "The technology that we work with"
 
 [[bar]]
 	# icon = "/icons/precision.svg"
-	name = "Backend: Python Flask, Ruby on Rails, Elixir Phoenix"
+	name = "Backend: Python Flask, Ruby on Rails, Elixir Phoenix, SQL"
 	percent = "90%"
 
 [[bar]]
@@ -21,13 +21,13 @@ subtitle = "The technology that we work with"
 
 [[bar]]
 	# icon = "/icons/heat.svg"
-	name = "DevOps: AWS, Google CLoud Platform, Digital Ocean, Vultr"
-	percent = "70%"
+	name = "Mobile: Flutter (Android and iOS)"
+	percent = "80%"
 
 [[bar]]
 	# icon = "/icons/heat.svg"
-	name = "Mobile: Flutter (Android and iOS)"
-	percent = "60%"
+	name = "DevOps: AWS, Google CLoud Platform, Digital Ocean, Vultr"
+	percent = "70%"
 
 [[bar]]
 	# icon = "/icons/presentation.svg"
