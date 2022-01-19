@@ -1,5 +1,3 @@
-# TODO
-
 https://github.com/soratrade/picotheme.git
 
 <a href="{{ .Site.Home.Permalink }}" class="inline-block font-bold no-underline select-none">
