@@ -12,3 +12,4 @@ Flutter enforced Sound Null Safety earlier this year which broke all apps that d
 ## What is Sound Null Safety?
 
 Coming soon..
+
