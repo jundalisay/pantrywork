@@ -92,7 +92,7 @@ weight = 20
 identifier = "works" # identifier is use for translations
 pre = "" # pre is inserted before the translation (icons, image, etc)
 url = "/works/" 
-weight = 25
+weight = 20
 
 
 [[menu.main]]

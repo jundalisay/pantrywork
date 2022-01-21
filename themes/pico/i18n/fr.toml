@@ -49,6 +49,9 @@ other = "À propos"
 [blog]
 other = "Blog"
 
+[works]
+other = "Works"
+
 [present]
 other = "Aujourd'hui"
 

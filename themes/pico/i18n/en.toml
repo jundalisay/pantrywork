@@ -49,6 +49,9 @@ other = "About"
 [blog]
 other = "Blog"
 
+[works]
+other = "Works"
+
 [present]
 other = "Present"
 

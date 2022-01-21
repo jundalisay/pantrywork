@@ -49,6 +49,9 @@ other = "Sobre mí"
 [blog]
 other = "Blog"
 
+[works]
+other = "Works"
+
 [present]
 other = "Hoy"
 
