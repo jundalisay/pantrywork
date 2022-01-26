@@ -6,9 +6,9 @@ weight = 30  # Order that this section will appear.
 # hidden = true
 
 # Widget title
-title = "Timeline"
+title = "The Evolution of Pantry"
 # Widget subtitle
-subtitle = "The Evolution of Pantry"
+subtitle = "A 10-year app sprint completed. The next 10 years is for the data science for the data from the apps"
 
 date_format = "02.01.2006" # Date format https://gohugo.io/functions/dateformat/#readout
 
