@@ -6,9 +6,13 @@ description = "Superphysics is a site designed for SEO"
 date = 2022-01-10
 +++
 
-![](/img/idea.jpg)
-
 
  Link | Framework &nbsp; | Version
 --- | --- | ---
 [Web](https://superphyics.one) &nbsp; &nbsp; &nbsp; | Hugo | 0.88.1
+
+# 
+
+![](/img/idea.jpg)
+
+

@@ -30,8 +30,8 @@ date_format = "02.01.2006" # Date format https://gohugo.io/functions/dateformat/
   description = "Bye bye Rails!"
 
 [[period]]
-  title = "Pantry mobile shifts to Flutter"
-  subtitle = "We start with Flutter after it goes to 1.0"
+  title = "Pantry mobile flies on to Flutter"
+  subtitle = "We switch to Flutter after it goes to 1.0"
   # location = "France"
   date_start = "2019-01-01"
   date_end = "2020-01-01"
