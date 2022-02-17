@@ -8,6 +8,19 @@ date = 2022-01-22
 
 # Elixir
 
+hd(array-name) ---- returns the first element or head
+
+tuple {}
+map %{}
+
+<!-- 
+mix = gem
+hex = rvm
+mix phoenix.new --version
+mix local.hex = gem install hex  -->
+
+
+
 
 ## Pattern Matching Rules
 
@@ -176,6 +189,9 @@ variables &capture
 
 `:timer`
 
+`IO.puts "whatever"`
+
+
 <br>
 
 ## Module
@@ -206,6 +222,12 @@ It allows state management <!-- (in Flutter) --> when combined with Agents and G
 It has two types:
 - Module Plug
 - Function Plug
+
+
+### Assigns 
+
+`assign(key: "#{data.attrib}")`
+
 
 <!-- plug = dsl webserver
 cowboy = webserver -->
@@ -421,7 +443,12 @@ Allows manipulation of the data to match Schema so that it can be passed to the 
       schemaname
       |> cast(attrs, [:key1, :key2,..])
       |> validate_required([:key1])
+      |> validate_inclusion(:name, ["John", "Jack"])
+      |> validate_exclusion(:name, ["Jub Jub"])
+      |> validate_length(:country, is: 2)
+      |> validate_length(:password, min: 8, max: 32)
     end
+
 
 
 `attrib_name = get_field(changeset, :attrib_name)`

@@ -114,6 +114,9 @@ query |> Repo.all -->
 
 User.where(first_name: ["John", "Erin"])
 User.where.not(first_name: ["John", "Erin"]) -->
+    User 
+    |> where([u], not (u.name in ["John", "Erin"]))
+    |> Repo.all
 
     User 
     |> where([u], u.name in ["John", "Erin"])
@@ -180,6 +183,9 @@ but it's a lot more pleasant looking on the other side. -->
     |> Repo.get(1)
     |> Repo.preload([:addresses])
 
+    User
+    |> Repo.get(1)
+    |> Repo.preload([addresses: order(Address, :state)])
 
 ### Grouping
 
