@@ -14,10 +14,25 @@ I'm putting up these steps as reference for future upgrades to Flutter.
 
 - Download the [Flutter zip](https://flutter.dev/docs/get-started/install/linux) from the official site
 - Unzip the files
-- Afterwards, the extracted files would be in `/home/your-ubuntu-username/Downloads/flutter`
-- In your terminal, enter: `sudo nano ~/.bashrc`
-- At the bottom, insert: `export PATH="$PATH:$HOME/Downloads/flutter/bin"`
-- Exit nano with `Ctrl + x`
+- Afterwards, the extracted files would be in 
+
+```
+/home/your-ubuntu-username/Downloads/flutter
+```
+
+- In your terminal, enter: 
+
+```
+sudo nano ~/.bashrc
+```
+
+- At the bottom, insert: 
+
+```
+export PATH="$PATH:$HOME/Downloads/flutter/bin"
+```
+
+- Exit nano with `Ctrl + x` then save
 
 <br>
 
@@ -25,8 +40,16 @@ I'm putting up these steps as reference for future upgrades to Flutter.
 
 - Download the [Android Studio SDK zip](https://developer.android.com/studio) from the official site
 - Unzip the files
-- Afterwards, the extracted files would be in `/home/your-ubuntu-username/Downloads/android-studio`
-- In your terminal, cd into `/home/your-ubuntu-username/Downloads/android-studio/bin`
+- Afterwards, the extracted files would be in 
+
+```
+/home/your-ubuntu-username/Downloads/android-studio
+```
+
+- In your terminal, cd into 
+```
+/home/your-ubuntu-username/Downloads/android-studio/bin
+```
 - Run `sh studio.sh`
 
 - In Android Studio, click `Tools --> Create desktop entry..`

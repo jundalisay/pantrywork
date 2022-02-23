@@ -13,38 +13,69 @@ Repo has a limited number of queries.
 
 ## Return a single record, and raise an error if more than one record is returned
 
-`Repo.one`
+``` elixir
+Repo.one
+```
 
 ## Check for existence
 
-`Repo.exists?`
+``` elixir
+Repo.exists?
+```
 
 
 ## Get by something
 
 ### Get a record by id
 
-Pipe | No Pipe
---- | ---
-`User > Repo.get(1)`| `Repo.get(User, 1)`
-`User > Repo.get!(1)` | `Repo.get!(User, 1)`
+
+Pipe
+
+``` elixir
+User |> Repo.get(1) 
+User |> Repo.get!(1)
+```
+
+No Pipe
+
+``` elixir
+Repo.get(User, 1)
+Repo.get!(User, 1)
+```
 
 
 ### Get first or last record
 
-Pipe | No Pipe
---- | ---
-`User > first > Repo.one` | `first(User)`
-`User > last > Repo.one` | `last(User)`
+Pipe 
+
+``` elixir
+User |> first |> Repo.one
+User |> last |> Repo.one
+```
+
+No Pipe 
+
+``` elixir
+last(User)
+first(User)
+```
 
 
 ### Get a single record by a single attribute
 
-Pipe | No Pipe
---- | ---
-`User > Repo.get_by(first_name: "John")` | `Repo.get_by(User, first_name: "John")`
-`User > Repo.get_by!(first_name: "John")` | `Repo.get_by!(User, first_name: "John")`
-<!-- # error if more than 1 record -->
+
+Pipe 
+
+``` elixir
+User |> Repo.get_by(first_name: "John")
+User |> Repo.get_by!(first_name: "John")
+```
+
+``` elixir
+Repo.get_by(User, first_name: "John")
+Repo.get_by!(User, first_name: "John") # error if more than 1 record
+```
+
 
 # 
 
@@ -56,22 +87,39 @@ This is needed for more complex queries that involve `where` `select` `order_by`
 - Keyword queries follow the pattern `from` `where` `select`
 - Macro queries or Query Expresssions use the Schema name and pipes
 
-These require `import Ecto.Query`
+These require: 
 
+``` elixir
+import Ecto.Query
+```
+
+Otherwise you'll get the common error:
+
+``` elixir
+cannot use ^variable_name outside of match clauses
+```
 
 ### Get multiple records by attribute and extract or "select" an attribute
 
 #### Keyword Method Bindingless
 
-    query = from(User, where: [first_name: "John"], select: [:job])
-    Repo.all(query)
+``` elixir
+query = from(User, 
+    where: [first_name: "John"], 
+    select: [:job])
+Repo.all(query)
+```
 
 #### Keyword Method with Binding
 
-This allows u to be called anywhere and have differet outputs determined by `select`
+This allows u to be called anywhere and have differet outputs determined by `select`:
 
-    query = from(u in User, where: u.first_name == "John", select: {u.job, u.age})
-    Repo.all(query)
+``` elixir
+query = from(u in User, 
+    where: u.first_name == "John", 
+    select: {u.job, u.age})
+Repo.all(query)
+```
 
 <!--     User
     |> where(first_name: "John")
@@ -96,6 +144,20 @@ query = from u in User,
         where: u.first_name == "John"
 query |> Repo.all -->
 
+### Get last n records
+
+<!-- User
+|> where([u], not (u.first_name == "John"))
+|> Repo.all -->
+
+``` elixir
+User
+|> where([u], u.first_name != "John")
+|> Repo.all
+```
+
+
+
 ### Negation
 
 
@@ -103,9 +165,11 @@ query |> Repo.all -->
 |> where([u], not (u.first_name == "John"))
 |> Repo.all -->
 
-    User
-    |> where([u], u.first_name != "John")
-    |> Repo.all
+``` elixir
+User
+|> where([u], u.first_name != "John")
+|> Repo.all
+```
 
 
 ### Multiple values
@@ -114,13 +178,17 @@ query |> Repo.all -->
 
 User.where(first_name: ["John", "Erin"])
 User.where.not(first_name: ["John", "Erin"]) -->
-    User 
-    |> where([u], not (u.name in ["John", "Erin"]))
-    |> Repo.all
 
-    User 
-    |> where([u], u.name in ["John", "Erin"])
-    |> Repo.all
+``` elixir
+User 
+|> where([u], not (u.name in ["John", "Erin"]))
+|> Repo.all
+
+User 
+|> where([u], u.name in ["John", "Erin"])
+|> Repo.all
+```
+
 
 <!-- User 
 |> where([u], not (u.name in ["John", "Erin"]))
@@ -141,67 +209,81 @@ User.where(uarel[:score].gteq(100))
 
 but it's a lot more pleasant looking on the other side. -->
 
-
-    User
-    |> where([u], u.score >= 100)
-    |> Repo.all
-
+``` elixir
+User
+|> where([u], u.score >= 100)
+|> Repo.all
+```
 
 ### OR statements
 
-    User
-    |> where(first_name: "John")
-    |> or_where(first_name: "Jack")
-    |> Repo.all
-
+``` elixir
+User
+|> where(first_name: "John")
+|> or_where(first_name: "Jack")
+|> Repo.all
+```
 
 ### Sorting
 
-    User
-    |> order_by(:first_name)
-    |> Repo.all
+``` elixir
+User
+|> order_by(:first_name)
+|> Repo.all
 
-    User
-    |> order_by(desc: :first_name)
-    |> Repo.all
+User
+|> order_by(desc: :first_name)
+|> Repo.all
 
-    User
-    |> order_by([:last_name, :first_name, desc: :age])
-    |> Repo.all
+User
+|> order_by([:last_name, :first_name, desc: :age])
+|> Repo.all
+```
+
 
 ### Pagination (Offset/Limit)
 
-    User
-    |> order_by(:first_name)
-    |> limit(5)
-    |> offset(10)
-    |> Repo.all
+``` elixir
+User
+|> order_by(:first_name)
+|> limit(5)
+|> offset(10)
+|> Repo.all
+```
 
 ### Loading 
 
-    User 
-    |> Repo.get(1)
-    |> Repo.preload([:addresses])
+``` elixir
+User 
+|> Repo.get(1)
+|> Repo.preload([:addresses])
 
-    User
-    |> Repo.get(1)
-    |> Repo.preload([addresses: order(Address, :state)])
+User
+|> Repo.get(1)
+|> Repo.preload([addresses: order(Address, :state)])
+```
+
 
 ### Grouping
 
-    User
-    |> group_by(:first_name)
-    |> select([:first_name])
-    |> Repo.all
+``` elixir
+User
+|> group_by(:first_name)
+|> select([:first_name])
+|> Repo.all
+```
+
 
 ### Aggregates
 
-    User
-    |> Repo.aggregate(:count, :id)
+``` elixir
+User
+|> Repo.aggregate(:count, :id)
 
-    User
-    |> Repo.aggregate(:count, :first_name)
+User
+|> Repo.aggregate(:count, :first_name)
 
-    User
-    |> group_by(:first_name)
-    |> select([u], [u.first_name, count(u.id)])
+User
+|> group_by(:first_name)
+|> select([u], [u.first_name, count(u.id)])
+```

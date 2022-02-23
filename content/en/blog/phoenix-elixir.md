@@ -8,11 +8,32 @@ date = 2022-01-22
 
 # Elixir
 
-hd(array-name) ---- returns the first element or head
+`hd` head
 
+``` elixir
+hd(array-name) #returns the first element or head
+```
+
+`_` 
+
+``` elixir
+_whatever #tells Elixir that `whatever` can be null
+```
+
+``` elixir
 tuple {}
 map %{}
+```
 
+## Pipe Operator
+
+``` elixir
+|>
+```
+
+passes output of earlier function into the next function due to the functional or flowing nature of Elixir. This requires the functional programmer to have more intelligence than an object-oriented programmer as to remember the long chain of cause and effect
+
+puts the result in the last series
 <!-- 
 mix = gem
 hex = rvm
@@ -20,17 +41,17 @@ mix phoenix.new --version
 mix local.hex = gem install hex  -->
 
 
-
-
 ## Pattern Matching Rules
 
-`=` is a 'match operator' not an equals sign
+`=` is a 'match operator' not an equals sign. This requires more intelligence from the programmer as to decide whether two sides match or not, instead of being equal to just one side like in object-oriented or procedural programming.
 - accepts left and right 'operands', with left being dominant
 - if left is a letter/s, the right is bound to that letter/s-variable `x = 1`
 
-`x = 'a'`
-`'b' = x` # error because left must be a letter/s or number such as 1 + 1 = 2
-`b = b` # error because right side needs non-variable
+``` elixir
+x = 'a'
+'b' = x # error because left must be a letter/s or number such as 1 + 1 = 2
+b = b # error because right side needs non-variable
+```
 
 - if right is a letter/s, the right is matched to the value of the left `x = y`
 - entering new match operators `x = 2` will re-bind the operands
@@ -38,52 +59,75 @@ mix local.hex = gem install hex  -->
 
 ### Integer Separator
 
-`1123_456_789` --> `123456789`
-
+``` elixir
+1123_456_789 --> 123456789
+```
 
 ### Booleans
 
-Strict: `and`, `or`, `not`
-Non-strict: `&&`, `||`, `!`
+Strict:
+``` elixir
+and
+or
+not
+```
+
+Non-strict: 
+``` elixir
+&& 
+|| 
+!
+```
+
 
 ### Comparison
 
-`>`
-`<`
-`>=``
-`<=``
-
+``` elixir
+>
+<
+>=
+<=
+```
 
 #### Non-Strict Comparison
 
-`!=`
-`==`
-
+``` elixir
+!=
+==
+```
 
 #### Strict Comparison
 
-`!==`
-`===`
-
+``` elixir
+!==
+===
+```
 
 ### String literals 
 
-`\` escape character which indicates a special string with certain abilities
-- `\n` new line eg: `"Donald\nTrump"`
+`\` escape character indicates a special string with certain abilities
+- `\n` new line eg: 
+
+``` elixir
+"Donald\nTrump"
+```
 
 `#{}` interpolation inserts expression within the string
-- `"Donald Trump #{'J' == 'r' == '.'}"
 
+``` elixir
+"Donald Trump #{'J' == 'r' == '.'}"
+```
 
 
 ### Atom literal 
 
 used as labels or tags
 
-    :text
-    :"<>" 
-    true  
-
+``` elixir
+:text
+:"<>" 
+true  
+```
 
 ## Maps
 
@@ -91,16 +135,20 @@ used as labels or tags
 
 #### Defining
 
-    defmodule ModuleName do
-      defstruct [:key1, :key2]
-    end
+``` elixir
+defmodule ModuleName do
+  defstruct [:key1, :key2]
+end
+```
 
 #### Calling
 
-    %ModuleName{key1: value, key2: value}
+``` elixir
+%ModuleName{key1: value, key2: value}
 
-    module = %ModuleName{key1: value, key2: value}
-    module.key1
+module = %ModuleName{key1: value, key2: value}
+module.key1
+```
 
 > data type must match! (atoms vs strings)
 
@@ -112,73 +160,111 @@ used as labels or tags
 ## Iteration 
 
 
-## Conditionals
+## Conditional Macros for the Lazy
+
+`->` if-then
+
+``` elixir
+case condition do
+    true -> a
+    false -> b
+end 
+```
+
+``` elixir
+case mega_function(input) do
+    {:error, error_message} -> {:error, error_message}
+    {:ok, mega_function_output} -> case mini_function(input) do  
+        {:error, error_message} -> {:error, error_message}
+        {:ok, input} -> %{key: mini_function_output}
+    end          
+end 
+```
 
 
-### 
 
-`_whatever` tells Elixir that `whatever` can be null
+`with <-` if-then, if-then, if-then
 
-
-
-<br>
-
-## Pipe Operator
-
-passes output of earlier function into the next function
+``` elixir
+case mega_function(input) do
+    with {:ok, mini_function_output} <- mini_function(input)} do
+        {:ok, %{key: mini_function_output} 
+        # mega_function_ouput has mini_function_output inside of it
+    end          
+end 
+```
 
 
 ## Guard Clauses
 
 Filters functions
 
-    def function_name(input) when condition1 do
-    end
+``` elixir
+def function_name(input) when condition1 do
+end
 
-    def function_name(input) when condition2 do
-    end
+def function_name(input) when condition2 do
+end
+```
 
 
 ## Functions
 
 enclosed in Modules
 
-`def function_name(argument_name) do`
+``` elixir
+def function_name(argument_name) do
 
-`def function_name(argument_name\\ "default-value-if-no-argument-name-is-given") do`
-
+def function_name(argument_name\\ "default-value-if-no-argument-name-is-given") do
+```
 
 ### Anonymous Functions
 
 **Setting**
 
-`function_name = fn(argument1, argument2, argument3..) -> argument1 + argument2 + argument3.. end`
+``` elixir
+function_name = fn(argument1, argument2, argument3..) -> argument1 + argument2 + argument3.. end
+```
 
 eg:
-- `square = fn(x) -> x * x end`
-- `function_name = fn(a,b,c,d) -> (a,b,c,d)`
-- `function_name = &(&1 + &2 + &3 + &4)`
-- `function_name = &(ModuleName.another_function/4)`
 
+``` elixir
+square = fn(x) -> x * x end
+function_name = fn(a,b,c,d) -> (a,b,c,d)
+function_name = &(&1 + &2 + &3 + &4)
+function_name = &(ModuleName.another_function/4)
+```
 
 **Calling** 
 
-- anonymous function: `function_name.(4)`
-- named function: `function_name(4)`
-
+``` elixir
+function_name.(4) #anonymous function
+function_name(4) #named function
+```
 
 #### Capture Operator: Shortcut for those lazy to write code
 
 `&1` is the shortcut for *the arguments* in `fn(x..) -> x..`
-- &1 is first argument 
-- &2 is second argument..
 
-eg: `function_name = &(&1 * &2)`
+``` elixir
+&1 #represents or captures the first argument 
+&2 #represents or captures the second argument
+```
 
-`&(Module.function_name/1)` is shortcut for the *whole Module*
+eg: 
 
-eg: `var_too_lazy_to_type_module = &(LongNamedModule.long_named_function/100)`
- 
+``` elixir
+function_name = &(&1 * &2)
+```
+
+``` elixir
+&(Module.function_name/1) #shortcut for the whole Module
+```
+
+``` elixir
+var_too_lazy_to_type_module = &(LongNamedModule.long_named_function/100)
+```
+
 <!-- &($1 * %1) 
 
 variables &capture
@@ -187,9 +273,12 @@ variables &capture
 
 ### Erlang Functions
 
-`:timer`
-
-`IO.puts "whatever"`
+``` elixir
+:timer
+```
+``` elixir
+IO.puts "whatever"
+```
 
 
 <br>
@@ -198,19 +287,22 @@ variables &capture
 
 container for the functions
 
-    defmodule ModuleName1 do
-      def function_name(argument1, argument2,..) do 
-        ModuleName2.function_name()
+``` elixir
+defmodule ModuleName1 do
+  def function_name(argument1, argument2,..) do 
+    ModuleName2.function_name()
+```
 
 
 ### Alias and Import: References to modules
 
-`alias Module` just identifies which Module to look into eventually
+``` elixir
+alias Module # just identifies which Module to look into eventually
 
-`import Module` actually gets all the functions of Module
+import Module # actually gets all the functions of Module
 
-`@constant = value` assigns a value as a constant at compile-time 
-
+@constant = value # assigns a value as a constant at compile-time 
+```
 
 
 ## Plug: Manipulates data in conn structs
@@ -226,8 +318,9 @@ It has two types:
 
 ### Assigns 
 
-`assign(key: "#{data.attrib}")`
-
+``` elixir
+assign(key: "#{data.attrib}")
+```
 
 <!-- plug = dsl webserver
 cowboy = webserver -->
@@ -238,31 +331,35 @@ This is a simple function that receives a conn struct, manipulates it, and outpu
 
 #### Defining `non_piped` and `piped` Function Plugs
 
-    defmodule App.ModuleName do
-      import Plug.Conn
+``` elixir
+defmodule App.ModuleName do
+  import Plug.Conn
 
-      def non_pipe(conn, options) do 
-        assign(conn, :non_pipe, 123)
-      end
+  def non_pipe(conn, options) do 
+    assign(conn, :non_pipe, 123)
+  end
 
-      def piped(conn, _options) do
-        conn
-        |> put_resp_content_type("text/plain") 
-        |> send_resp(200, "From a Piped Function Plug that outputted this data inside this conn struct")
-      end
+  def piped(conn, _options) do
+    conn
+    |> put_resp_content_type("text/plain") 
+    |> send_resp(200, "From a Piped Function Plug that outputted this data inside this conn struct")
+  end
 
-    end 
-
+end 
+```
 
 #### Calling in Elixir
 
-`plug :non_piped`
+``` elixir
+plug :non_piped
+```
 
 #### Calling in Phoenix View
 
-`<%= @conn.assigns[:non_piped] %>`
-`<%= @non_piped %>`
-
+```
+<%= @conn.assigns[:non_piped] %>
+<%= @non_piped %>
+```
 
 
 ### Module Plug
@@ -271,34 +368,38 @@ This is a large function, as a Module, that needs to be initialized with additio
 
 #### Defining
 
-    defmodule App.Modulename do
-      import Plug.Conn
+``` elixir
+defmodule App.Modulename do
+  import Plug.Conn
 
-      def init(options) do
-        options
-      end
+  def init(options) do
+    options
+  end
 
-      def call(conn, _options) do 
-      end
+  def call(conn, _options) do 
+  end
 
-    end
-
+end
+```
 
 #### Calling in Elixir
 
-    alias ModulePlugName
-    plug ModulePlugName, [option: "Blah"] when action is [:index]
-
+``` elixir
+alias ModulePlugName
+plug ModulePlugName, [option: "Blah"] when action is [:index]
+```
 
 #### Calling
 
-    Controller 
+``` elixir
+Controller 
 
-    alias Appname.Plugname
+alias Appname.Plugname
 
-    plug
+plug
 
-    function_name.(1,2,3,4)
+function_name.(1,2,3,4)
+```
 
 <br>
 
@@ -312,11 +413,13 @@ This is a large function, as a Module, that needs to be initialized with additio
 
 #### Calling
 
-    defmodule App.TotalController do
-      import App.ModuleName
-      plug :get_total
-      ..
-    end 
+``` elixir
+defmodule App.TotalController do
+  import App.ModuleName
+  plug :get_total
+  ..
+end 
+```
 
 <!-- in layout:
 <%= @conn.assigns[:get_total] %> -->
@@ -326,30 +429,32 @@ This is a large function, as a Module, that needs to be initialized with additio
 
 ### Defining
 
-    map = %{:atom => "string", "string" => "string"}
-    mapshortcut = %{atom: "string", atom2: "string"}
+``` elixir
+map = %{:atom => "string", "string" => "string"}
+mapshortcut = %{atom: "string", atom2: "string"}
+```
 
 ### Calling
 
-    map.atom
-    map["string"]
-    map[:atom]
+``` elixir
+map.atom
+map["string"]
+map[:atom]
+```
 
 Examples: 
 
-    map = %{ph -> manila, us -> wash}
+``` elixir
+map = %{ph -> manila, us -> wash}
+```
 
-    pipe operator puts the result in the last series
+<!-- name(1,2,3,4)
 
-    name(1,2,3,4)
-
-    function_name = &(Calculator.subtract/2)
-
-
+function_name = &(Calculator.subtract/2) -->
 
 # OTP Processes and State Management
 
-This allows functions to hold data independent of the function which is really held through the Genserver. In other web languages, this ability is done through an in-memory database such as Redis which holds the state for the webserver. This makes the OTP a real app. 
+This allows functions to hold data independent of the function which is really held through the Genserver. <!-- In other web languages, this ability is done through an in-memory database such as Redis which holds the state for the webserver. --> This makes the OTP a real app. 
 
 
 ## Processes
@@ -364,8 +469,9 @@ This allows functions to hold data independent of the function which is really h
 - 1 task : 1 process
 - has no state
 
-`Task.start(function_name)`
-
+``` elixir
+Task.start(function_name)
+```
 
 ## Agents: Adds Lightweight State management on a Process 
 
@@ -404,9 +510,10 @@ Phoenix uses Repo through:
 
 #### Common methods
 
+``` elixir
 Repo.count()
 Repo.update_all("tablename", set: [updated_at: Ecto.DateTime.utc])
-
+```
 
 ### Schema
 
@@ -439,29 +546,41 @@ Allows manipulation of the data to match Schema so that it can be passed to the 
 - Cast: filters the parameters with the attributes to be accepted into the changeset
 - Validate: validates those filtered attributes. This includes constraints which are set on the database level
 
-    def changeset(schemaname, attrs) do
-      schemaname
-      |> cast(attrs, [:key1, :key2,..])
-      |> validate_required([:key1])
-      |> validate_inclusion(:name, ["John", "Jack"])
-      |> validate_exclusion(:name, ["Jub Jub"])
-      |> validate_length(:country, is: 2)
-      |> validate_length(:password, min: 8, max: 32)
-    end
+#### Defining 
+
+``` elixir
+def changeset(schemaname, attrs) do
+  schemaname
+  |> cast(attrs, [:key1, :key2,..])
+  |> validate_required([:key1])
+  |> validate_inclusion(:name, ["John", "Jack"])
+  |> validate_exclusion(:name, ["Jub Jub"])
+  |> validate_length(:country, is: 2)
+  |> validate_length(:password, min: 8, max: 32)
+end
+```
 
 
+#### Calling
 
-`attrib_name = get_field(changeset, :attrib_name)`
+``` elixir
+attrib_name = get_field(changeset, :attrib_name)
+```
+
 
 ### Schemaless Changeset
-    
-    model = %{key1: :string, key2: string} 
-    attributes = %{key1: "value", key2: "value"}    
-    changeset = {%{}, model}
-      |> cast(attributes, Map.keys(model))
-      |> validate_required([:key1])
-    end
 
+
+#### Defining
+
+``` elixir    
+model = %{key1: :string, key2: string} 
+attributes = %{key1: "value", key2: "value"}    
+changeset = {%{}, model}
+  |> cast(attributes, Map.keys(model))
+  |> validate_required([:key1])
+end
+```
 
 ## Ecto Queries (see [other article](/blog/ecto-queries))
 
@@ -479,7 +598,6 @@ Allows manipulation of the data to match Schema so that it can be passed to the 
 ### Phoenix Ecto
 
 allows changeset shortcuts into forms 
-
 
 
 <!-- Creates a changeset named-struct from the changeset settings based on change:

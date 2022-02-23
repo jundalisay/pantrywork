@@ -25,13 +25,13 @@ The easiest way to deploy Phoenix is through Gigalixir or Heroku, so here are th
 
 3 -- In your app's root directory, create the git remote 
 
-```
+``` bash
 heroku git:remote -a socrates
 ```
 
 4 -- In your app's root directory, create the config files
 
-```
+``` bash
 $ echo 'elixir_version=1.12.2' > elixir_buildpack.config
 $ echo 'erlang_version=24.0.3' >> elixir_buildpack.config
 $ echo 'node_version=10.20.1' > phoenix_static_buildpack.config
@@ -39,7 +39,7 @@ $ echo 'node_version=10.20.1' > phoenix_static_buildpack.config
 
 5 -- In your `assets/package.json`
 
-```
+``` bash
 {
   ...
   "scripts": {
@@ -51,41 +51,44 @@ $ echo 'node_version=10.20.1' > phoenix_static_buildpack.config
 
 6 -- In your `config/prod.exs`, replace the `url:` line with
 
-```
+``` bash
 url: [scheme: "https", host: "socrates.herokuapp.com", port: 443],
 force_ssl: [rewrite_on: [:x_forwarded_proto]],
 ```
 
 7 -- In your `config/runtime.xs` uncomment `ssl: true` 
 
-```
+``` bash
 ssl: true
 ```
 
 8 -- In ` lib/socrates_web/endpoint.ex` add the following in the `socket` line
 
-```
+``` bash
 websocket: [timeout: 45_000]
 ```
 
 9 -- Generate secret key
-```
+
+``` bash
 mix phx.gen.secret
 ```
 
 10 -- Set the resulting key onto Heroku
-```
+
+``` bash
 heroku config:set SECRET_KEY_BASE="longsecretkey"
 ```
 
 11 -- Commit to git and push to Heroku
 
-```
+``` bash
 git push heroku master
 ```
 
 12 -- Create database after the app has been deployed
-```
+
+``` bash
 heroku addons:create heroku-postgresql:hobby-dev
 heroku config:set POOL_SIZE=18
 heroku run "POOL_SIZE=2 mix ecto.migrate"
@@ -96,19 +99,21 @@ heroku run "POOL_SIZE=2 mix run priv/repo/seeds.exs"
 
 1 -- Create an app through the terminal
 
-```
+``` bash
 gigalixir create -n socrates
 ```
 
 2 -- Create the config files
-```
+
+``` bash
 $ echo 'elixir_version=1.10.3' > elixir_buildpack.config
 $ echo 'erlang_version=22.3' >> elixir_buildpack.config
 $ echo 'node_version=12.16.3' > phoenix_static_buildpack.config
 ```
 
 3 -- In your `assets/package.json`
-```
+
+``` bash
 {
   ...
   "scripts": {
@@ -119,13 +124,14 @@ $ echo 'node_version=12.16.3' > phoenix_static_buildpack.config
 ```
 
 4 -- Deploy
-```
+
+``` bash
 git push gigalixir 
 ```
 
 5 -- Create, migrate, and seed the database
 
-```
+``` bash
 gigalixir pg:create --free
 gigalixir run mix ecto.migrate
 gigalixir run mix run priv/repo/seeds.exs

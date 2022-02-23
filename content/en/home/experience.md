@@ -14,7 +14,7 @@ date_format = "02.01.2006" # Date format https://gohugo.io/functions/dateformat/
 
 [[period]]
   title = "Pantrynomics on Hugo"
-  subtitle = "Lockdowns on force us to focus on theory"
+  subtitle = "Lockdowns force us to focus on theory"
   # location = "France"
   date_start = "2021-01-01"
   date_end = ""
@@ -35,7 +35,7 @@ date_format = "02.01.2006" # Date format https://gohugo.io/functions/dateformat/
   # location = "France"
   date_start = "2019-01-01"
   date_end = "2020-01-01"
-  description = "We drop React and React Native"
+  description = "We drop React and React Native and code happily again"
 
 [[period]]
   title = "We start Pantry mobile in React Native"
