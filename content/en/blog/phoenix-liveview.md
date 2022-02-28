@@ -19,6 +19,65 @@ phx-value-id="<%= struct.id %>"
 %{"input-data" => elixir-variable-repersenting-a-string}
 ```
 
+## SOCKET
+
+- a struct that has an 'assigns' map 
+- the assigns map has the LiveView state info
+
+``` elixir
+{:ok, socket}
+{:no_reply, socket}
+{:error, socket}
+```
+
+
+### mount(map_of_query_router_params, session_data, socket_struct)
+
+- creates a LiveView process from the router
+- assigns the state of the LiveView process to the socket struct
+- must return a `{:ok, socket}` tuple
+- can be revealed by `IO.inspect(socket)`
+
+``` elixir
+def mount(map_of_query_router_params, session_data, socket_struct) do
+  {:ok, assign(socket_struct, :key, value)}
+end
+```
+
+
+### render(assigns_map)
+
+- needs to output content as a 'sigil'
+
+
+~L"""
+<%= @key_in_the_assigns %>
+"""
+
+
+
+### handle_event("event_name_in_html", metadata_about_the_event, socket_struct)
+
+- handles events from the template bindings such as `phx-click`
+
+``` elixir
+def handle_event("event", _, socket) do
+  assign(socket, :key, value)
+  {:no_reply, socket}
+end 
+```
+
+
+## BINDINGS IN TEMPLATE
+
+### phx-click
+
+- binds a click event to an element then sends it to the LiveView process through the socket 
+
+
+
+
+
 ### LIVE ROUTES
 
 Live Routes are `PATCH` because it updates or patches the LiveView process with the new data and sends a new 'diff' to the DOM
@@ -29,6 +88,19 @@ Live Routes are `PATCH` because it updates or patches the LiveView process with 
 ```
 
 __CURRENT-MODULE__ is a shortcut for the Module Name
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### handle_params

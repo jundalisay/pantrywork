@@ -150,10 +150,19 @@ query |> Repo.all -->
 |> where([u], not (u.first_name == "John"))
 |> Repo.all -->
 
+Pipe 
+
 ``` elixir
 User
 |> where([u], u.first_name != "John")
+|> limit(5)
 |> Repo.all
+```
+
+No Pipe
+
+``` elixir
+Repo.all(from u in User, where: u.first_name != "John", order_by: [desc: :inserted_at], limit: 5)
 ```
 
 
