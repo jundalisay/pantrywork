@@ -1,7 +1,7 @@
 +++
 title = "Ecto Queries"
 subtitle = ""
-banner = "/img/tech.jpg"
+banner = "/img/phx.jpg"
 description = "Here are a ecto queries"
 tags = ['Phoenix']
 date = 2022-02-15
