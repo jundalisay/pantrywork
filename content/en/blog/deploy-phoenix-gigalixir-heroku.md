@@ -7,7 +7,7 @@ tags = ['Phoenix', 'Gigalixir', 'Heroku']
 date = 2021-12-11
 +++
 
-We intially developed the Pantry web app using Python Flask and then Ruby on Rails many years ago. 
+<!-- We intially developed the Pantry web app using Python Flask and then Ruby on Rails many years ago. 
 
 After we started getting users in our web app, we realized how terrible Flask and Rails were for performance. The users strained our server which we either had to burst (leading to more charges) or restart (which led to a loss of users). 
 
@@ -15,13 +15,22 @@ Flask and Rails clearly had to go. But the dilemma was what to replace them with
 
 Since Phoenix is heavily influenced by Rails, we naturally decided to go for Phoenix.  Unlike Flask or Rails that needs a server with minimum 1GB RAM or more, Phoenix can run a full web app with 300 MB! This is in addition to its speed, and its nice LiveView feature, which turns Phoenix into a websocket server.
 
-The easiest way to deploy Phoenix is through Gigalixir or Heroku, so here are the steps for Phoenix 1.6.2, taken from the official guide.  This assumes you already have the Gigalixir and Heroku CLIs and web accounts. Let's say the app name is `socrates`.
+The easiest way to deploy Phoenix is through Gigalixir or Heroku, so here are the steps for Phoenix 1.6.2, taken from the official guide.  This assumes you already have the Gigalixir and Heroku CLIs and web accounts. Let's say the app name is `socrates`. -->
 
 ## Heroku 
 
 1 -- On Heroku Dashboard, create an app named `socrates`
 
-2 -- On Heroku Dashboard, Go to Settings -> Buildpacks then add `hashnuke/elixir` and `https://github.com/gjaldon/heroku-buildpack-phoenix-static.git`
+2 -- On Heroku Dashboard, Go to `Settings` -> `Buildpacks` then add 
+
+``` bash
+`hashnuke/elixir`
+```
+and 
+
+``` bash
+https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
+```
 
 3 -- In your app's root directory, create the git remote 
 
@@ -90,7 +99,7 @@ git push heroku master
 
 ``` bash
 heroku addons:create heroku-postgresql:hobby-dev
-heroku config:set POOL_SIZE=18
+heroku config:set POOL_SIZE=10
 heroku run "POOL_SIZE=2 mix ecto.migrate"
 heroku run "POOL_SIZE=2 mix run priv/repo/seeds.exs"
 ```
