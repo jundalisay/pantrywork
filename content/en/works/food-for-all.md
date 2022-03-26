@@ -1,6 +1,6 @@
 +++
 title = "Food for All Website"
-subtitle = "Superphysics uses Hugo for SEO"
+subtitle = "Hugo"
 banner = "/img/fa.jpg"
 description = "Food for All is a site leading to a donation app"
 date = 2022-03-10
@@ -13,6 +13,6 @@ date = 2022-03-10
 
 # 
 
-![](/img/fa.jpg)
+![Food for All](/img/fa.jpg)
 
 

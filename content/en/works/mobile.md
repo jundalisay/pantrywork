@@ -12,6 +12,6 @@ date = 2022-01-10
 
 #
 
-![](/img/mob.jpg)
+![Mobile App](/img/mob.jpg)
 
 

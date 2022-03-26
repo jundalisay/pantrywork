@@ -13,6 +13,6 @@ date = 2022-01-11
 
 #
 
-![](/img/screen2.png)
+![Pantry web](/img/screen2.png)
 
 

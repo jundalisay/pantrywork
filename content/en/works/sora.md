@@ -11,6 +11,6 @@ date = 2021-12-11
 [Web](https://sorahanoi.herokuapp.com/) &nbsp; &nbsp; &nbsp; | Rails  | 6.0
 
 
-![](/img/davaoui.jpg)
+![Rails UI](/img/davaoui.jpg)
 
 

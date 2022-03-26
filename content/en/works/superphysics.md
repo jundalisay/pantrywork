@@ -13,6 +13,6 @@ date = 2022-01-10
 
 # 
 
-![](/img/idea.jpg)
+![Idea](/img/idea.jpg)
 
 
