@@ -1,8 +1,8 @@
 +++
 title = "Neo Holistic Yoga"
-banner = "/img/fa.jpg"
+banner = "/img/neoui.jpg"
 description = "Neo Holistic Yoga uses Hugo"
-date = 2022-03-10
+date = 2022-03-15
 +++
 
 

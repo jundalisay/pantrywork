@@ -1,6 +1,6 @@
 +++
 title = "Pantry Points Site"
-banner = "/img/fa.jpg"
+banner = "/img/how.jpg"
 description = "Pantry Points sites use Hugo"
 date = 2022-03-10
 +++

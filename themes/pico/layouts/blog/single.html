@@ -21,7 +21,7 @@
 	{{ if .PrevInSection }}
 	<div class="{{ if .NextInSection }} w-full sm:w-1/2 {{ end }} mb-1 text-center sm:text-left overflow-ellipsis pr-1">
 		<a class="mr-4 no-underline" href="{{ .PrevInSection.Permalink }}">
-			<img src="{{ "/icons/top_arrow.svg" | relURL }}" class="transform -rotate-90 inline-block">
+			<img src="{{ "/icons/top_arrow.svg" | relURL }}" alt="arrow" class="transform -rotate-90 inline-block">
 		</a>
 		<a href="{{ .PrevInSection.Permalink }}">
 			<span class="underline">{{ .PrevInSection.Title }}</span>
@@ -36,7 +36,7 @@
 			<span class="underline">{{ .NextInSection.Title }}</span>
 		</a>
 		<a class="ml-4 no-underline" href="{{ .NextInSection.Permalink }}">
-			<img src="{{ "/icons/top_arrow.svg" | relURL }}" class="transform rotate-90 inline-block">
+			<img src="{{ "/icons/top_arrow.svg" | relURL }}" alt="arrow" class="transform rotate-90 inline-block">
 		</a>
 	</div>
 	{{ end }}
