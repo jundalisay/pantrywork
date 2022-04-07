@@ -1,5 +1,5 @@
 +++
-title = "Elixir and Phoenix Concepts"
+title = "Basic Elixir and Phoenix Concepts"
 banner = "/img/phx.jpg"
 description = "We list down essential concepts in Elixir and Phoenix"
 tags = ['Phoenix']

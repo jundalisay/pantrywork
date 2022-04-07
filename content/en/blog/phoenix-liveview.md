@@ -1,5 +1,5 @@
 +++
-title = "Phoenix Live View"
+title = "Phoenix Live View Basics"
 banner = "/img/phx.jpg"
 description = "We list down essential concepts in Phoenix Live View"
 tags = ['Phoenix']
@@ -88,14 +88,6 @@ Live Routes are `PATCH` because it updates or patches the LiveView process with 
 ```
 
 __CURRENT-MODULE__ is a shortcut for the Module Name
-
-
-
-
-
-
-
-
 
 
 

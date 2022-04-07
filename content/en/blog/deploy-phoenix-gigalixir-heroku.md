@@ -1,5 +1,5 @@
 +++
-title = "Deploy Phoenix 1.6.2 to Gigalixir and Heroku"
+title = "How to Deploy Phoenix 1.6.2 to Gigalixir and Heroku"
 subtitle = ""
 banner = "/img/tech.jpg"
 description = "We list how to deploy Phoenix 1.6.2 to Gigalixir and Heroku"
@@ -46,7 +46,7 @@ $ echo 'erlang_version=24.0.3' >> elixir_buildpack.config
 $ echo 'node_version=10.20.1' > phoenix_static_buildpack.config
 ```
 
-5 -- In your `assets/package.json`
+5 -- In your `assets/package.json` (create the file if you don't have it otherwise it won't serve the JS and CSS)
 
 ``` bash
 {
