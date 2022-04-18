@@ -11,7 +11,7 @@ We do machine learning on Nx
 Link | Description | Date
 --- | --- | ---
 [ISAIAH](https://pantrypoints.com/match) &nbsp; &nbsp; &nbsp; | A matching system for Pantry | April 11, 2022
-
+Artificial Sentience | Our artificial general intelligence (AGI) system | Coming soon!
 
 
 # 

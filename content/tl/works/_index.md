@@ -1,5 +1,5 @@
 +++
-title = "Our Works"
+title = "Mga Gawa Namin"
 [cascade]
   banner = "img/pantryworks.jpg"
 +++
