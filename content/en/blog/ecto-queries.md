@@ -24,6 +24,24 @@ Repo.exists?
 ```
 
 
+
+
+## Get the length of an model
+
+``` elixir
+length(@posts)
+```
+
+## Get the count 
+
+``` elixir
+Repo.one(from p in Post, select: count("*"))
+
+Repo.aggregate(Post, :count, :id)
+```
+
+
+
 ## Get by something
 
 ### Get a record by id

@@ -44,6 +44,23 @@ iex> Enum.chunk_by(["one", "two", "three", "four", "five", "six"], fn(x) -> Stri
 [["one", "two"], ["three"], ["four", "five"], ["six"]]
 ```
 
+
+## find
+
+```elixir
+Enum.find(array, default_result, fn x -> method_using_x end)
+```
+
+Finds the element in the list that fulfills the function, otherwise returns a default result
+
+```elixir
+Enum.find([2, 3, 4], fn x -> rem(x, 2) == 1 end) #3
+
+Enum.find([2, 4, 6], fn x -> rem(x, 2) == 1 end) # nil
+
+Enum.find([2, 4, 6], 0, fn x -> rem(x, 2) == 1 end) # 0 as the default result
+```
+
 ## map_every
 
 <!-- Sometimes chunking out a collection isn’t enough for exactly what we may need. If this is the case, map_every/3 can be very useful to hit every nth items, always hitting the first one: -->
@@ -51,7 +68,6 @@ iex> Enum.chunk_by(["one", "two", "three", "four", "five", "six"], fn(x) -> Stri
 Applies the function every n items
 
 ```elixir
-
 iex> Enum.map_every([1, 2, 3, 4, 5, 6, 7, 8], 3, fn x -> x + 1000 end)
 [1001, 2, 3, 1004, 5, 6, 1007, 8]
 ```
@@ -72,8 +88,10 @@ three
 
 Applies a function to each element and creates a new list with the results <!-- collection look to the map/2 function: -->
 
+```elixir
 iex> Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
 [-1, 0, 1, 2]
+```
 
 
 ## min/1

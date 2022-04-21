@@ -1,11 +1,19 @@
 +++
-title = "Elixir Data Types"
+title = "Elixir Conditionals"
 subtitle = ""
 banner = "/img/phx.jpg"
 description = "We list Elixir Data Types"
 tags = ['Elixir']
 date = 2022-03-10
 +++
+
+## WITH
+
+Assuming a chain of conditions:
+
+``
+
+
 
 
 m = %{a: 1, c: 3}

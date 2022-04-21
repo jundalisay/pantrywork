@@ -23,6 +23,7 @@ phx-value-id="<%= struct.id %>"
 
 - a struct that has an 'assigns' map 
 - the assigns map has the LiveView state info
+- 'socket assigns' therefore means the map-data
 
 ``` elixir
 {:ok, socket}
@@ -49,23 +50,14 @@ end
 
 - needs to output content as a 'sigil'
 
-
+``` elixir
 ~L"""
 <%= @key_in_the_assigns %>
 """
-
-
-
-### handle_event("event_name_in_html", metadata_about_the_event, socket_struct)
-
-- handles events from the template bindings such as `phx-click`
-
-``` elixir
-def handle_event("event", _, socket) do
-  assign(socket, :key, value)
-  {:no_reply, socket}
-end 
 ```
+
+
+
 
 
 ## BINDINGS IN TEMPLATE
@@ -84,40 +76,96 @@ Live Routes are `PATCH` because it updates or patches the LiveView process with 
 
 ``` elixir
 <%= live_patch "Text", 
-  to: Routes.live_path(@socket, __CURRENT-MODULE__, id: struct.id) %>
+  to: Routes.live_path(@socket, __CURRENTMODULE__, id: struct.id) %>
 ```
 
-__CURRENT-MODULE__ is a shortcut for the Module Name
+`__CURRENTMODULE__` is a shortcut for the Module Name
 
 
 
 
+## HANDLERS
 
+- These render the changes in the data (or "state") inside the socket-struct-assign-map. 
 
 
 #### handle_params
 
-- handles actions that affect Routes via live_patch sends an event as data-phx-link-state
-- always invoked after mount
+- handles URL parameters that affect Routes via live_patch
+- why not call it as handle_url??
+- sends an event as data-phx-link-state
+- always invoked after `mount`
 - handles dynamic states, just as mount handles static states
 
 ``` elixir
-handle_params(params-of-url, url, socket) do 
+handle_params(parameters_of_url, url, socket) do 
+  # manipulate the socket data here to automatically output and update the view
   {:noreply, socket}
 ```
 
+
 ``` elixir
-def handle_params(%{"id" => id}, params-of-url, url, socket) do 
-  {:noreply, socket}
-end
-def handle_params(%{_, _url, socket) do # handles empty params 
+# has parameters
+def handle_params(%{"id" => id}, parameters_of_url, url, socket) do 
+  # manipulate the socket data via the id state
   {:noreply, socket}
 end
 
+# empty parameters
+def handle_params(%{_, _url, socket) do
+  # if no url parameter is entered then just show the socket
+  {:noreply, socket}
+end
+
+# rendering whatever
 def render(data) do
-  always-needed-assigns = %{key: data}
+  always_needed_assigns = %{key: data}
   ~L"""
     <%= @key %>
   """
 end
 ```
+
+
+
+
+### handle_event
+
+- handles external messages (events) from the template bindings such as `phx-click`
+- why not call it `handle_external???`
+
+``` elixir
+def handle_event("name_of_external_message_or_event_in_html", metadata_about_the_event, socket_struct) do
+  assign(socket, :key, value)
+  {:no_reply, socket}
+end 
+```
+
+
+
+#### handle_info
+
+- handles internal messages (info) 
+
+``` elixir
+def handle_info(name_of_internal_message, socket_struct) do
+  assign(socket, :key, value)
+  {:no_reply, socket}
+end 
+```
+
+
+
+
+## Subscribe - Broadcast
+
+### Subscribe 
+
+``` elixir
+  def subscribe do
+    Phoenix.PubSub.subscribe(App.PubSub, "topic_name")
+  end
+```
+
+### Broadcast
+
