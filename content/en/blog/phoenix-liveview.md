@@ -162,14 +162,22 @@ end
 ### Subscribe 
 
 ``` elixir
-  def subscribe do
-    Phoenix.PubSub.subscribe(App.PubSub, "topic_name")
-  end
+def subscribe do
+  Phoenix.PubSub.subscribe(App.PubSub, "topic_name")
+end
 ```
 
 ### Broadcast
 
+``` elixir
+def broadcast({:ok, message}, event) do 
+  Phoenix.PubSub.broadcast(App.PubSub, "topic_name", message)
+end`
+```
 
+``` elixir
+message = {:message_name, actual_message}
+```
 
 
 ## LIVE COMPONENTS
@@ -199,7 +207,7 @@ Add `id` to the live_component to make it 'stateful'
 Add `@myself` to the stateful form to make the Component handle the event
 
 ```elixir
-<form phx-submit="send" phx-target="<%= @myself %>" %>
+<form phx-submit="send-message" phx-target="<%= @myself %>" %>
 ```
  
 
@@ -235,6 +243,13 @@ Form submission triggers `CardComponent.handle_event/3` which must update the ca
 ## LiveView as the Source: self()
 
 The component and the view run in the same process. So, sending an internal message from the LiveComponent to the parent LiveView is done by sending a message to `self()`:
+
+
+```elixir
+send self(), {:message_name, %{content_of_message}}
+```
+
+
 
 ```elixir
 defmodule CardComponent do
