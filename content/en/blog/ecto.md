@@ -5,6 +5,7 @@ banner = "/img/phx.jpg"
 description = "Here are a ecto commands"
 tags = ['Phoenix']
 date = 2022-04-15
+draft = true
 +++
 
 post = MyRepo.get!(Post, 42)

@@ -35,6 +35,10 @@ phx-value-id="<%= struct.id %>"
 ### mount(map_of_query_router_params, session_data, socket_struct)
 
 - creates a LiveView process from the router
+- called twice:
+  1. To load the HTML
+  2. After it has connected to the websocket
+  
 - assigns the state of the LiveView process to the socket struct
 - must return a `{:ok, socket}` tuple
 - can be revealed by `IO.inspect(socket)`
