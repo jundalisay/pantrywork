@@ -6,20 +6,20 @@
 		{{ .Content }}
 	</div>
 
-	<form class="w-full relative" method='{{ .Params.method | default "POST" }}' action="{{ .Params.action }}">
-
-	<form method="post" action="https://formspree.io/f/xdoyvngk">
+<!-- 	<form method="post" action="https://formspree.io/f/xdoyvngk"> -->
+	<form method="post" action="https://hub.pantrypoints.com/api/email">	
+        <input name="email[source]" id="source" type="hidden" value="{{ .Permalink }}">
 	    <div class="field half first">
 	        <label for="name">Name</label>
-	        <input type="text" name="name" id="name" style="color: black" />
+	        <input type="text" name="email[name]" id="name" style="color: black" />
 	    </div>
 	    <div class="field half">
 	        <label for="email">Email</label>
-	        <input type="text" name="email" id="email" style="color:  black" />
+	        <input type="text" name="email[email]" id="email" style="color:  black" />
 	    </div>
 	    <div class="field">
 	        <label for="message">Message</label>
-	        <textarea name="message" id="message" rows="6" style="color: black"></textarea>
+	        <textarea name="message" id="email[message]" rows="6" style="color: black"></textarea>
 	    </div>
 		<div class="float-right">
 			<input type="reset" class="bg-secondary-dark dark:bg-secondary-light mr-2" value='{{ i18n "cancel" }}' />
