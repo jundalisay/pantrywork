@@ -24,6 +24,6 @@ hero_media = "/img/mob.jpg"
 
 +++
 
-# We build the Pantry Points System
+# We build the Moneyless Pantry Points System
 
 Pantry Work is a small dedicated team that builds the Pantry system for Pantrynomics 
